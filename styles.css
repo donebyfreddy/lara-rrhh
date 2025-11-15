@@ -1,0 +1,124 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header with logo + text */
+header {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header img {
+    height: 50px;
+}
+
+header .title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Main content layout */
+.main {
+    flex: 1;
+    display: flex;
+    margin: 2rem;
+    gap: 2rem;
+    height: calc(100% - 100px);
+}
+
+/* Info panel on the left */
+.info-panel {
+    width: 250px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    animation: fadeInLeft 1s forwards;
+}
+
+.info-panel strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Chat container on the right */
+.chat-container {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: fadeInRight 1s forwards;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: #fff;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px);}
+    to { opacity: 1; transform: translateX(0);}
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px);}
+    to { opacity: 1; transform: translateX(0);}
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .main {
+        flex-direction: column;
+        margin: 1rem;
+        height: auto;
+    }
+    .info-panel {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .chat-container {
+        height: 500px;
+    }
+}
